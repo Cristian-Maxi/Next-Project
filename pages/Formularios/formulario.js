@@ -25,16 +25,16 @@ function Formulario() {
             <label htmlFor="nombre">Nombre</label>
           </div>
           <div className={styles.elemento}>
-            <input type="text" name="contraseña" id="contraseña" required />
-            <label htmlFor="contraseña">Contraseña</label>
+            <input type="text" name="apellido" id="apellido" required />
+            <label htmlFor="apellido">Apellido</label>
           </div>
           <div className={styles.elemento}>
             <input type="text" name="usuario" id="usuario" required />
             <label htmlFor="usuario">Usuario</label>
           </div>
           <div className={styles.elemento}>
-            <input type="password" name="password" id="password" required />
-            <label htmlFor="password">Password</label>
+            <input type="contraseña" name="contraseña" id="contraseña" required />
+            <label htmlFor="contraseña">Contraseña</label>
           </div>
           <div className={styles.elemento}>
             <input type="email" name="email" id="email" required />

@@ -33,7 +33,7 @@ function Formulario() {
             <label htmlFor="usuario">Usuario</label>
           </div>
           <div className={styles.elemento}>
-            <input type="contraseña" name="contraseña" id="contraseña" required />
+            <input type="password" name="contraseña" id="contraseña" required />
             <label htmlFor="contraseña">Contraseña</label>
           </div>
           <div className={styles.elemento}>

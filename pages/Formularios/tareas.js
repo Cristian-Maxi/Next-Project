@@ -1,13 +1,21 @@
 import styles from "../../styles/tareas.module.css"
 import Head from 'next/head';;
 import { useState,useEffect } from 'react';
+import { useRouter } from "next/router";
 
 function Tareas() {
+
+  const router = useRouter();
+
+  const Regresar = () => {
+    router.push("/")
+  }
 
   const [toDo, setToDo] = useState([])
   const [toDos, setToDos] = useState([])
   const [Editar, setEditar] = useState(null)
   const [EditarTexto, setEditarTexto] = useState("")
+  // const [descripcion, setDescripcion] = useState("");
 
   useEffect(() => {
     const temp = localStorage.getItem("tareas")
@@ -29,11 +37,13 @@ function Tareas() {
     const newToDo = {
       id: new Date().getTime(),
       texto: toDo,
+      // descripcion: descripcion,
       completo: false,
     }
 
     setToDos([...toDos].concat(newToDo))
     setToDo("")
+    // setDescripcion("");
   }
 
   function Borrar(id) {
@@ -77,7 +87,8 @@ function Tareas() {
       </Head>
       <h1 className={styles.titulo}><i class="bi bi-check2-square"></i> Lista de tareas</h1>
       <form className={styles.agregar} onSubmit={Submit}>
-        <input type="text" value={toDo} onChange={(evento) => setToDo(evento.target.value)}/>
+        <input type="text" value={toDo} placeholder="Tarea" onChange={(evento) => setToDo(evento.target.value)}/>
+        {/* <input type="text" placeholder="Descripción" value={descripcion} onChange={(evento) => setDescripcion(evento.target.value)}/> */}
         <button className={styles.boton_add} type="submit">Agregar <i class="bi bi-plus-square-fill"></i></button>
       </form>
       <div>
@@ -89,6 +100,7 @@ function Tareas() {
             <input type="text" className={styles.input_editar} value={EditarTexto} onChange={(evento) => setEditarTexto(evento.target.value)}/>
             :
             <div>{todo.texto}</div>}
+            {/* <div className={styles.descripcion}>{"- " + todo.descripcion}</div> ##Agrega la descripción aquí */}
           </div>
           <div className={styles.todo_actions}>
             <button onClick={() => Borrar(todo.id)}>Borrar <i class="bi bi-trash3-fill"></i></button>
@@ -99,6 +111,7 @@ function Tareas() {
           </div>
         </div>)}
       </div>
+      <button className={styles.regresar} onClick={Regresar}>Volver al inicio</button>
     </div>
   )
 }

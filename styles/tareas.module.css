@@ -137,6 +137,25 @@
     justify-content: space-between;
 }
 
+.regresar {
+    display: block;
+    margin: auto;
+    background-color: rgb(52, 113, 227);
+    border: none;
+    margin-top: 30px;
+    padding: 10px;
+    color: azure;
+    font-size: larger;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.regresar:hover {
+    background-color: rgb(156, 41, 65);
+    text-shadow: 2px 2px black;
+}
+
 /* .contenedor {
     font-family: Arial, Helvetica, sans-serif;
 }

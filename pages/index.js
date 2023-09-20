@@ -10,7 +10,13 @@ function Home() {
   }
 
   const Redirect_Tareas = () => {
-    router.push("/Formularios/tareas")
+    const usuarioInput = document.getElementById("usuario").value;
+    const contraseñaInput = document.getElementById("contraseña").value;
+    if (usuarioInput === "" || contraseñaInput === "") {
+      alert("Por favor, completa todos los campos.");
+    } else {
+      router.push("/Formularios/tareas");
+    }
   }
 
   return (
@@ -20,7 +26,7 @@ function Home() {
       <h2 className={styles.subtitulo}>Ingresar</h2>
       <form action="" method="post">
         <div className={styles.elemento}>
-          <input type="text" name="usuario" id="usuario" />
+          <input type="text" name="usuario" id="usuario" required />
           <label htmlFor="usuario">Usuario</label>
         </div>
         <div className={styles.elemento}>

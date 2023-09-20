@@ -67,3 +67,13 @@
     background-color: rgb(253, 141, 141);
     text-shadow: 2px 2px 10px black;
 }
+
+.mensaje {
+    font-size: 25px;
+    font-weight: bolder;
+    background-image: linear-gradient(to right top,#90b7ff, #867cf4, #bc70ef);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    text-shadow: 2px 2px 5px black;
+}

@@ -9,7 +9,8 @@ function Home() {
     router.push("/Formularios/formulario")
   }
 
-  const Redirect_Tareas = () => {
+  const Redirect_Tareas = (evento) => {
+    evento.preventDefault();
     const usuarioInput = document.getElementById("usuario").value;
     const contraseñaInput = document.getElementById("contraseña").value;
     if (usuarioInput === "" || contraseñaInput === "") {

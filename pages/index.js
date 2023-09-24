@@ -14,7 +14,7 @@ function Home() {
     const contraseñaInput = document.getElementById("contraseña").value;
     if (usuarioInput === "" || contraseñaInput === "") {
       alert("Por favor, completa todos los campos.");
-    } else {
+   }else{
       router.push("/Formularios/tareas");
     }
   }
